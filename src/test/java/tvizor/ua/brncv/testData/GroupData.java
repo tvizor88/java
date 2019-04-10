@@ -1,5 +1,5 @@
 //constructor
-package tvizor.ua.brncv;
+package tvizor.ua.brncv.testData;
 
 public class GroupData {
     private final String name;
