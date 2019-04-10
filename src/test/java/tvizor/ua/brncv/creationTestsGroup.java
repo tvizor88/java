@@ -1,12 +1,14 @@
 package tvizor.ua.brncv;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.testng.annotations.*;
-import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.fail;
 
 public class creationTestsGroup {
     private WebDriver driver;
@@ -17,12 +19,7 @@ public class creationTestsGroup {
     @BeforeClass(alwaysRun = true)
     public void setUp() throws Exception {
         driver = new FirefoxDriver();
-        baseUrl = "https://www.katalon.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
-
-    @Test
-    public void testAddressbook() throws Exception {
         driver.get("http://localhost/addressbook/");
         driver.findElement(By.name("user")).click();
         driver.findElement(By.name("user")).clear();
@@ -31,7 +28,12 @@ public class creationTestsGroup {
         driver.findElement(By.name("pass")).clear();
         driver.findElement(By.name("pass")).sendKeys("secret");
         driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]")).click();
-        driver.findElement(By.linkText("groups")).click();
+
+    }
+
+    @Test
+    public void testAddressbook() throws Exception {
+       driver.findElement(By.linkText("groups")).click();
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).clear();
