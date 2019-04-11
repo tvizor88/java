@@ -1,25 +1,20 @@
-package tvizor.ua.brncv;
+package tvizor.ua.brncv.appManager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import tvizor.ua.brncv.testData.GroupData;
+import tvizor.ua.brncv.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.fail;
-
-public class TestBase {
+public class ApplicationManager {
     public WebDriver driver;
     public String baseUrl;
     public boolean acceptNextAlert = true;
     public StringBuffer verificationErrors = new StringBuffer();
 
-    @BeforeClass(alwaysRun = true)
-    public void setUp() throws Exception {
+    public void init() {
         System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
         System.setProperty("webdriver.gecko.driver", "resources\\geckodriver.exe");
         driver = new FirefoxDriver();
@@ -27,7 +22,6 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.get("http://localhost/addressbook/");
         login("admin", "secret");
-
     }
 
     public void login(String username, String password) {
@@ -68,14 +62,8 @@ public class TestBase {
         driver.findElement(By.linkText("groups")).click();
     }
 
-    @AfterClass(alwaysRun = true)
-    public void tearDown() throws Exception {
-        driver.findElement(By.linkText("Logout")).click();
+    public void stop() {
         driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
     }
 
     public boolean isAlertPresent() {

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="57.2166666666667" y="166.0">tvizor.ua.brncv.TestBase</node>
+    <node x="192.0" y="485.0">tvizor.ua.brncv.tests.GroupCreationTests</node>
+    <node x="0.0" y="485.0">tvizor.ua.brncv.tests.GroupDeletionTests</node>
+    <node x="126.85000000000004" y="0.0">tvizor.ua.brncv.testData.GroupData</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="tvizor.ua.brncv.tests.GroupDeletionTests" target="tvizor.ua.brncv.TestBase">
+      <point x="-43.0" y="-24.5" />
+      <point x="43.0" y="460.0" />
+      <point x="83.7166666666667" y="460.0" />
+      <point x="-79.5" y="134.5" />
+    </edge>
+    <edge source="tvizor.ua.brncv.TestBase" target="tvizor.ua.brncv.testData.GroupData">
+      <point x="0.0" y="-134.5" />
+      <point x="163.2166666666667" y="141.0" />
+      <point x="181.85000000000002" y="141.0" />
+      <point x="-55.0" y="58.0" />
+    </edge>
+    <edge source="tvizor.ua.brncv.tests.GroupCreationTests" target="tvizor.ua.brncv.TestBase">
+      <point x="0.0" y="-24.5" />
+      <point x="281.0" y="460.0" />
+      <point x="242.7166666666667" y="460.0" />
+      <point x="79.5" y="134.5" />
+    </edge>
+    <edge source="tvizor.ua.brncv.tests.GroupCreationTests" target="tvizor.ua.brncv.testData.GroupData">
+      <point x="59.33333333333334" y="-24.5" />
+      <point x="340.33333333333337" y="460.0" />
+      <point x="321.55" y="460.0" />
+      <point x="321.55" y="141.0" />
+      <point x="291.85" y="141.0" />
+      <point x="55.0" y="58.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="269.5" />
+  <SelectedNodes>
+    <node>tvizor.ua.brncv.tests.GroupDeletionTests</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

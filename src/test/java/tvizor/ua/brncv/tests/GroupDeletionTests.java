@@ -1,17 +1,16 @@
 package tvizor.ua.brncv.tests;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import tvizor.ua.brncv.TestBase;
+import tvizor.ua.brncv.appManager.TestBase;
 
 public class GroupDeletionTests  extends TestBase {
 
     @Test
     public void testDeleteGroup() throws Exception {
-        gotoGroupPage();
-        selectGroup();
-        deleteSelectedGroups();
-        returnToGroupPage();
+        app.gotoGroupPage();
+        app.selectGroup();
+        app.deleteSelectedGroups();
+        app.returnToGroupPage();
     }
 
 }
