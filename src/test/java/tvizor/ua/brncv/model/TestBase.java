@@ -1,4 +1,4 @@
-package tvizor.ua.brncv.appManager;
+package tvizor.ua.brncv.model;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterClass;
@@ -19,7 +19,7 @@ public class TestBase {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
-        app.driver.findElement(By.linkText("Logout")).click();
+        app.getGroupHelper().driver.findElement(By.linkText("Logout")).click();
         app.stop();
         String verificationErrorString = app.verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
